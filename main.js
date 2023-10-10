@@ -1,11 +1,17 @@
+
+
+function mostrar_alerta(mensaje) {
+    alert(mensaje);
+}
+
 let nombre = prompt("ingrese su nombre.");
 
 while (nombre === null) {
     nombre = "Anonimo";
-    alert ("Porfavor ingrese su nombre para continuar.");
+    mostrar_alerta ("Porfavor ingrese su nombre para continuar.");
 } 
 
-alert ("Bienvenido a mi ecommerce " + nombre);
+mostrar_alerta ("Bienvenido a mi ecommerce " + nombre);
 
 
 let opcion = prompt ("Que desea comprar? Escriba 1 para remeras, 2 para pantalones");
@@ -21,15 +27,15 @@ if (opcion === "1"){
             if (i === 0) {
                 direccion = prompt(preguntas[i]);
             } else if (i === 1) {
-                alert(preguntas[i] + direccion);
+                mostrar_alerta(preguntas[i] + direccion);
             } else {
-                alert(preguntas[i]);
+                mostrar_alerta(preguntas[i]);
             }
         }       
     }
 
     if (confirmacion === false){
-        alert("Muchas gracias por su visita");
+        mostrar_alerta("Muchas gracias por su visita");
     }
 }
 if (opcion === "2"){
@@ -40,18 +46,20 @@ if (opcion === "2"){
             if (i === 0) {
                 direccion = prompt(preguntas[i]);
             } else if (i === 1) {
-                alert(preguntas[i] + direccion);
+                mostrar_alerta(preguntas[i] + direccion);
             } else {
-                alert(preguntas[i]);
+                mostrar_alerta(preguntas[i]);
             }
         }       
     }
 
     if (confirmacion === false){
-        alert("Muchas gracias por su visita");
+        mostrar_alerta("Muchas gracias por su visita");
     }
 }
 while (opcion !=="1" && opcion !== "2"){
-    alert("Ingreso un numero o caracter invalido. Vuelva a intentarlo.")
+    mostrar_alerta("Ingreso un numero o caracter invalido. Vuelva a intentarlo.")
     let opcion = prompt ("Que desea comprar? Escriba 1 para remeras, 2 para pantalones")
 }
+
+//
