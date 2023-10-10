@@ -1,31 +1,57 @@
-nombre = prompt("ingrese su nombre.");
-alert ("Bienvenido a la red " + nombre);
+let nombre = prompt("ingrese su nombre.");
 
-const tweets = [
-    "Aguante messi",
-    "La chocolatada va con azucar",
-    "La chocolatada va sin azucar",
-    "unas ganas de jugar a la play",
-    "El dolar no existe es todo un invento del estado."
-];
+while (nombre === null) {
+    nombre = "Anonimo";
+    alert ("Porfavor ingrese su nombre para continuar.");
+} 
 
-alert("Bienvenido a twitter de la salada")
-alert ("A continuacion le vamos a mostrar unos tweets")
-alert ("Escriba me gusta o no me gusta para determinar sus gustos.")
+alert ("Bienvenido a mi ecommerce " + nombre);
 
-meGusta = 0
-noMeGusta = 0
 
-for (let i = 0; i < tweets.length; i++){
-        let respuesta = prompt(tweets[i] + " (escriba me gusta o no me gusta)");
-            if (respuesta === "me gusta"){
-                meGusta += 1   
-            }else if(respuesta === "no me gusta"){
-                noMeGusta += 1
-            }else {
-                alert("Respuesta no válida. Por favor, ingrese 'me gusta' o 'no me gusta'.");
-                i--; 
+let opcion = prompt ("Que desea comprar? Escriba 1 para remeras, 2 para pantalones");
+let direccion = "";
+const preguntas = ["Ingrese su dirección para poder realizar el envío del pedido", 
+"Su artículo será enviado a: " , 
+"Muchas gracias por su compra"];
+
+if (opcion === "1"){
+    let confirmacion = confirm("Usted eligió remera. Su precio es de $1000. Desea comprar este artículo?");
+    if (confirmacion === true){
+        for (let i = 0; i < preguntas.length; i++) {
+            if (i === 0) {
+                direccion = prompt(preguntas[i]);
+            } else if (i === 1) {
+                alert(preguntas[i] + direccion);
+            } else {
+                alert(preguntas[i]);
             }
-}
+        }       
+    }
 
-alert( "De todos los tweets"+"\nTe gustaron: " + meGusta + "\ny" + "\nNo te gustaron: " + noMeGusta);
+    if (confirmacion === false){
+        alert("Muchas gracias por su visita");
+    }
+}
+if (opcion === "2"){
+    let confirmacion = confirm("Usted eligió Pantalones. Su precio es de $1000. Desea comprar este artículo?");
+
+    if (confirmacion === true){
+        for (let i = 0; i < preguntas.length; i++) {
+            if (i === 0) {
+                direccion = prompt(preguntas[i]);
+            } else if (i === 1) {
+                alert(preguntas[i] + direccion);
+            } else {
+                alert(preguntas[i]);
+            }
+        }       
+    }
+
+    if (confirmacion === false){
+        alert("Muchas gracias por su visita");
+    }
+}
+while (opcion !=="1" && opcion !== "2"){
+    alert("Ingreso un numero o caracter invalido. Vuelva a intentarlo.")
+    let opcion = prompt ("Que desea comprar? Escriba 1 para remeras, 2 para pantalones")
+}
